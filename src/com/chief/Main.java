@@ -7,15 +7,17 @@ import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) {
-        try {
-            BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Baby Beast\\Desktop\\finalisima\\trial2.txt"));
-            String s;
-            while ((s=reader.readLine()) !=null ) System.out.println(s);
-            reader.close();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+    public static void main(String[] args) throws InterruptedException {
+       // FileWrite fileWrite=new FileWrite();
+        FileRead fileRead=new FileRead();
+        Thread thread2=new Thread(fileRead);
+        //Thread thread1=new Thread(fileWrite);
+       // thread1.start();
+        //thread1.join();
+        thread2.start();
+
+
+        Thread.sleep(1000);
+
     }
 }
